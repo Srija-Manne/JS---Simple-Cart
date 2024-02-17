@@ -2,12 +2,7 @@
 <html>
 <head>
     <title>Event Billing</title>
-    <style>
-        /* Your CSS styles */
-        #result {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -24,24 +19,25 @@
             <label for="price">Price:</label>
             <input type="text" id="price" placeholder="12000">
         </div>
-        <button id="add" onclick = "addPrice()">Add to cart</button>
+        <button id="add" onclick="addPrice()">Add to cart</button>
     </div>
 
-    <table id="result" border = "1">
+    <table id="result" border="1">
         <thead>
             <tr>
                 <th>Event ID</th>
                 <th>Event Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th> Remove from cart </th>
+                <th>Remove from cart</th>
             </tr>
         </thead>
         <tbody>
             <!-- Table body will be populated dynamically -->
         </tbody>
     </table>
-
+    <button id="calc"> Calculate</button>
+    <div id="output"></div>
     <script src="script.js"></script>
 </body>
 </html>

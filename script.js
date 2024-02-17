@@ -1,5 +1,10 @@
-document.getElementById('add').addEventListener('click', addPrice);
+document.getElementById('calc').addEventListener('click',calculate);
+const countInput = document.getElementById('count');
 
+countInput.addEventListener('input', function(event) {
+       calculate();
+});
+var s
 function addPrice() 
 {
     var eventId = document.getElementById('eventId').value;
@@ -26,9 +31,33 @@ function addPrice()
     cell4.innerHTML = `<input type="number" id="count" name="count" min="0" value="0">`;
     cell5.innerHTML = "<button onclick='removeRow(this)'>Remove</button>";
     document.getElementById('result').style.display = 'table';
+    calculate();
 }
 
 function removeRow(button) {
     var row = button.parentNode.parentNode;
     row.parentNode.removeChild(row);
+}
+
+function calculate()
+{
+    var sum = 0;
+         var table = document.getElementById('result').getElementsByTagName('tbody')[0];
+         if(table)
+         {
+            var rows = table.getElementsByTagName('tr');
+            for(var i = 0;i < rows.length;i++)
+            {
+                var row = rows[i];
+                var qinput = row.querySelector('input[type = "number"]');
+                var priceCell = row.cells[2];
+                var quan = parseInt(qinput.value);
+                var price = parseFloat(priceCell.innerHTML);
+                sum += quan*price;
+
+            }
+
+         }
+         var s = document.getElementById('output');
+         s.innerHTML = `The total cost is ${sum}`;
 }
