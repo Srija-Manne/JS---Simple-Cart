@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Billing</title>
+    <style>
+        /* Your CSS styles */
+        #result {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Billing</h2>
+        <div class="form-group">
+            <label for="eventId">Event ID:</label>
+            <input type="text" id="eventId" placeholder="121">
+        </div>
+        <div class="form-group">
+            <label for="eventName">Event Name:</label>
+            <input type="text" id="eventName" placeholder="Wedding">
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" id="price" placeholder="12000">
+        </div>
+        <button id="add" onclick = "addPrice()">Add to cart</button>
+    </div>
+
+    <table id="result" border = "1">
+        <thead>
+            <tr>
+                <th>Event ID</th>
+                <th>Event Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th> Remove from cart </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body will be populated dynamically -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
